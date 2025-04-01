@@ -1,4 +1,4 @@
-# MyProject
+# MyShoppingCart
 
 ## Description
 
@@ -19,10 +19,10 @@ The application includes a shopping cart feature, where users can add, remove, a
 ```bash
 1. Clone the repository:
 
-git clone https://github.com/barteked/MyProject.git
+git clone https://github.com/barteked/MyShoppingCart.git
 
 2. Navigate to the project directory:
-cd MyProject/FirstProject/demo
+cd MyShoppingCart/FirstProject/demo
 
 3. Run the application:
 ./mvnw spring-boot:run
