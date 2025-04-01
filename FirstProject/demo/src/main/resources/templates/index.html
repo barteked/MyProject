@@ -1,0 +1,36 @@
+<head>
+    <style>
+        body {
+            background-image: url('/background.jpg');
+            background-size: cover; /* Dopasowanie obrazu do całego tła */
+            background-position: center; /* Wyśrodkowanie obrazu */
+            background-repeat: no-repeat; /* Zapobieganie powtarzaniu obrazu */
+        }
+    </style>
+<head>
+    <style>
+        .product-item {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .product-name {
+            font-weight: bold;
+            color: blue;
+        }
+        .edit-link {
+            margin-right: 10px;
+        }
+        .delete-link {
+            color: red;
+        }
+    </style>
+    }
+</head>
+<body>
+<h2>Lista Produktów</h2>
+<div th:each="product : ${listProducts}" class="product-item">
+    <p th:text="|Nazwa: ${product.name}, Cena: ${product.price}|" class="product-name"></p>
+    <a th:href="@{/edit/{id}(id=${product.id})}" class="edit-link">Edytuj</a>
+    <a th:href="@{/delete/{id}(id=${product.id})}" class="delete-link">Usuń</a>
+</div>
+</body>

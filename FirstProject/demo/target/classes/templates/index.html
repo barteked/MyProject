@@ -1,0 +1,54 @@
+<head>
+    <style>
+        body {
+            background: linear-gradient(135deg, #89f7fe, #66a6ff); /* Gradientowe tło */
+            color: #333; /* Kolor tekstu */
+            font-family: Arial, sans-serif; /* Czcionka */
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #003366; /* Ciemnoniebieski kolor tytułu */
+        }
+
+        .product-item {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .product-name {
+            font-weight: bold;
+            color: #0044cc; /* Niebieski kolor nazwy produktu */
+        }
+
+        .edit-link {
+            margin-right: 10px;
+            color: #0066cc; /* Niebieski kolor linku */
+            text-decoration: none; /* Usunięcie podkreślenia */
+        }
+
+        .edit-link:hover {
+            text-decoration: underline; /* Podkreślenie linku przy najechaniu */
+        }
+
+        .delete-link {
+            color: #cc0000; /* Czerwony kolor linku */
+            text-decoration: none; /* Usunięcie podkreślenia */
+        }
+
+        .delete-link:hover {
+            text-decoration: underline; /* Podkreślenie linku przy najechaniu */
+        }
+    </style>
+</head>
+<body>
+<h2>Lista Produktów</h2>
+<div th:each="product : ${listProducts}" class="product-item">
+    <p th:text="|Nazwa: ${product.name}, Cena: ${product.price}|" class="product-name"></p>
+    <a th:href="@{/edit/{id}(id=${product.id})}" class="edit-link">Edytuj</a>
+    <a th:href="@{/delete/{id}(id=${product.id})}" class="delete-link">Usuń</a>
+</div>
+</body>
